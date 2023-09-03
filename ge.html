@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Gemütliche Bar direkt neben der Oliwa-Kathedrale, umgeben von wunderschönen Blumengärten 🌹🌺🌻🌷🌼🌳 Perfekter Ort für ein hausgemachtes Mittagessen 🍲, das von unseren fantastischen Köchinnen vor Ort zubereitet wird. Und zum Nachtisch laden wir Sie zu einem köstlichen Kaffee aus der italienischen Espressomaschine 🍵 und hausgemachten Kuchen 🍰🧁 ein. Für Kinder und nicht nur, wahrscheinlich das beste italienische Eis 🍦 oder die Eisbecher von Zielona Budka.">
+    <title>Menu - Bar przy Potoku (GE)</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://barprzypotoku.github.io" />
+    <meta property="og:title" 38content="Menu - Bar przy Potoku" />
+    <meta property="og:description" content="Przytulny Bar już przy Katedrze Oliwskiej w otoczeniu przepieknych kwiatów ogrodowych 🌹🌺🌻🌷🌼🌳 Idealne miejsce na domowy obiad 🍲, który jest przygotowany na miejscu przez nasze wspaniałe kucharki. A na deser zapraszamy na przepyszna kawę z włoskiego ekspresu 🍵 oraz domowe ciasta 🍰🧁 Dla dzieci i nie tylko prawdopodobnie najlepsze w Gdańsku lody włoskie 🍦 czy też lody gałkowe Zielona Budka." />
+    <meta property="og:image" content="https://barprzypotoku.github.io/main.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://barprzypotoku.github.io"/>
+    <meta property="twitter:title" content="Menu - Bar przy Potoku" />
+    <meta property="twitter:description" content="Przytulny Bar już przy Katedrze Oliwskiej w otoczeniu przepieknych kwiatów ogrodowych 🌹🌺🌻🌷🌼🌳 Idealne miejsce na domowy obiad 🍲, który jest przygotowany na miejscu przez nasze wspaniałe kucharki. A na deser zapraszamy na przepyszna kawę z włoskiego ekspresu 🍵 oraz domowe ciasta 🍰🧁 Dla dzieci i nie tylko prawdopodobnie najlepsze w Gdańsku lody włoskie 🍦 czy też lody gałkowe Zielona Budka." />
+    <meta property="twitter:image" content="https://barprzypotoku.github.io/main.jpg" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            margin: 20px auto;
+            margin-top: -10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 20px;
+            padding-left: 20px;
+            max-width: 600px;
+
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .menu-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-selector {
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu-category {
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .menu-category-notes {
+            margin-top: -3px;
+            color: #666;
+            margin-bottom: 7px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .menu-name {
+            color: #444;
+            font-weight: 600;
+            max-width: fit-content;
+        }
+
+        .menu-price {
+            flex: 1;
+            text-align: right;
+            font-weight: bold;
+            color: #444;
+            white-space: nowrap;
+            max-width: fit-content;
+        }
+
+        .menu-notes {
+            flex: 10; /* Adjusted flex value for the notes */
+            color: #555;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: lighter;
+        }
+
+        .menu-notes-important {
+            color: #333;
+            margin-top: -3px;
+            margin-bottom: 7px;
+
+        }
+
+        .sticky-message {
+            background-color: rgba(51, 51, 51, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            position: sticky;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            place-content: center;
+        }
+
+        /* Style for the close button */
+        .close-button {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for the logos and links */
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 20px; /* Adjust the margin to control spacing */
+            max-width: fit-content;;
+        }
+
+        .logo img {
+            width: 12px; /* Adjust the size of the logos */
+            height: 12px;
+            margin-bottom: -1px;
+            margin-right: 3px; /* Add some spacing between the logo and text */
+            margin-left: 10px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Hide the checkbox */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Style for the hidden checkbox */
+        input[type="checkbox"]:checked + .sticky-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bar przy Potoku - MENU</h1>
+    </header>
+    <div class="menu-container">
+        <div class="language-selector">
+            Język/Language/Sprache: <a href="index.html" id="pl">PL 🇵🇱</a> | <a href="en.html" id="en">EN 🇬🇧</a> | <a href="ge.html" id="de">DE 🇩🇪</a>
+        </div>
+
+        <div class="menu-category"><h2>Suppen</h2></div>
+        <div class="menu-category-notes"><em>Arten variieren je nach Tag</em></div>
+        
+            <div class="menu-item">
+                <div class="menu-name">Tomatensuppe</div>
+                <div class="menu-notes"><em>mit Nudeln</em></div>
+                <div class="menu-price">14 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Gurkensuppe</div>
+                <div class="menu-price">14 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Sauerteigsuppe</div>
+                <div class="menu-notes"><em>mit Kartoffeln, Wurst und Ei</em></div>
+                <div class="menu-price">14 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Sauerampfersuppe</div>
+                <div class="menu-price">14 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Rote-Bete-Suppe</div>
+                <div class="menu-price">14 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Kaltschale</div>
+                <div class="menu-price">15 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Kosakensuppe</div>
+                <div class="menu-notes"><em>mit Gemüse und Fleisch</em></div>
+                <div class="menu-price">17 PLN</div>
+            </div>
+        
+
+        <div class="menu-category"><h2>Tagesmenüs</h2></div>
+        <div class="menu-notes-important">Im Menü: Kartoffeln oder Pommes + Gemüsestrauß aus 3 Salaten</div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Schweineschnitzel</div>
+                <div class="menu-price">35 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Hähnchenbrust</div>
+                <div class="menu-price">35 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Schweinekotelett in eigener Sauce</div>
+                <div class="menu-price">35 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Geflügel in Butter</div>
+                <div class="menu-price">40 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Frikadellen (2 Stück) in Dillsauce</div>
+                <div class="menu-price">30 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Hacksteak</div>
+                <div class="menu-price">30 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Fischkotelett</div>
+                <div class="menu-price">30 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Spare Ribs</div>
+                <div class="menu-price">35 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Hühnerleber</div>
+                <div class="menu-price">28 PLN</div>
+            </div>
+            
+
+        <div class="menu-category"><h2>Fischgerichte</h2></div>
+
+            <div class="menu-item">
+                <div class="menu-name">Zander</div>
+                <div class="menu-price">15 PLN pro 100g</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Kabeljau</div>
+                <div class="menu-price">15 PLN pro 100g</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Beilage: Kartoffeln oder Pommes + Gemüsestrauß aus 3 Salaten</div>
+                <div class="menu-price">+20 PLN</div>
+            </div>
+            
+        <div class="menu-category"><h2>Pierogi</h2></div>
+        <div class="menu-notes-important">Serviert: pur, mit Sauerrahm oder mit Beilage</div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Russische Pierogi mit Quark und Kartoffeln</div>
+                <div class="menu-price">30 PLN für 10 Stück</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Pierogi mit Fleisch</div>
+                <div class="menu-price">30 PLN für 10 Stück</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Süße Pierogi mit Quark</div>
+                <div class="menu-price">30 PLN für 10 Stück</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Pelmeni</div>
+                <div class="menu-notes"><em>Ukrainische Fleischpierogi</em></div>
+                <div class="menu-price">30 PLN für 12 Stück</div>
+            </div>
+            
+            
+
+        <div class="menu-category"><h2>Hauptgerichte</h2></div>
+
+            <div class="menu-item">
+                <div class="menu-name">Golabki (2 Stück) mit Kartoffeln</div>
+                <div class="menu-price">30 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Kartoffelpuffer (4 Stück)</div>
+                <div class="menu-notes"><em>Serviert: pur, mit Sauerrahm oder mit Zucker</em></div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Leczo</div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Kloßnudeln mit Kohl und Fleisch</div>
+                <div class="menu-price">25 PLN</div>
+            </div>
+            
+
+        <div class="menu-category"><h2>Weitere Gerichte und Beilagen</h2></div>
+
+            <div class="menu-item">
+                <div class="menu-name">Gegrillte Wurst mit Brot</div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Hot-Dog mit Salaten</div>
+                <div class="menu-price">12 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Schweineburger</div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Hähnchenburger</div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Vegetarische Brötchen mit Salaten und Käse</div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Überbackenes Gericht mit Champignons und Käse</div>
+                <div class="menu-price">20 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Pommes Frites (120 g)</div>
+                <div class="menu-price">10 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Kartoffeln</div>
+                <div class="menu-price">10 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Gemischter Salat (300 g)</div>
+                <div class="menu-price">15 PLN</div>
+            </div>
+            
+
+        <div class="menu-category"><h2>Kaffee</h2></div>
+
+            <div class="menu-item">
+                <div class="menu-name">Espresso</div>
+                <div class="menu-price">9 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Doppelter Espresso (Doppio)</div>
+                <div class="menu-price">15 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Schwarzer/Weißer Kaffee</div>
+                <div class="menu-price">10 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Cappuccino</div>
+                <div class="menu-price">11 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Latte (einfacher Espresso)</div>
+                <div class="menu-price">12 PLN</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-name">Latte (doppelter Espresso)</div>
+                <div class="menu-price">17 PLN</div>
+            </div>
+            
+
+        <div class="menu-category"><h2>Tee</h2></div>
+        
+            <div class="menu-item">
+                <div class="menu-name">Schwarzer, grüner, Earl Grey</div>
+                <div class="menu-price">9 PLN</div>
+            </div>
+            
+    </div>
+    <div class="menu-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9287.685293323331!2d18.5578998!3d54.4113655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd75352e4936b3%3A0xabf9d96bb34c0771!2sBar%20przy%20Potoku!5e0!3m2!1spl!2spl!4v1693757264331!5m2!1spl!2spl" 
+            width="100%" 
+            max-height="450px" 
+            style="border:0;"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <footer>
+        Bar przy potoku, ul. Cystersów 19B, 80-330, Gdańsk Oliwa
+    </footer>
+    <input type="checkbox" id="close-sticky">
+    <div class="sticky-message">
+        <div class="logos-container">
+            <div class="logo">
+                <a href="https://search.google.com/local/writereview?placeid=ChIJszZJLjV1_UYRcQdMs2vZ-as" target="_blank">
+                    <img src="google-logo.png" alt="Google Logo">
+                    Bewertung auf Google abgeben
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.tripadvisor.com/UserReviewEdit-g274725-d26329082-Bar_Przy_Potoku-Gdansk_Pomerania_Province_Northern_Poland.html" target="_blank">
+                    <img src="tripadvisor-logo.png" alt="TripAdvisor Logo">
+                    Bewertung auf TripAdvisor abgeben
+                </a>
+            </div>
+        </div>
+        <label class="close-button" for="close-sticky">×</label>
+    </div>
+</body>
+</html>
